@@ -1,8 +1,49 @@
-function createPromise(position, delay) {
-  const shouldResolve = Math.random() > 0.3;
-  if (shouldResolve) {
-    // Fulfill
-  } else {
-    // Reject
+const delayInput = document.querySelector('[name="delay"]');
+const stepInput = document.querySelector('[name="step"]');
+const amountInput = document.querySelector('[name="amount"]');
+const form = document.querySelector(".form");
+
+form.addEventListener('submit', (evt) => {
+  const amountValue = amountInput.value;
+  const firstDelay = delayInput.value;
+  const delay = stepInput.value;
+
+  evt.preventDefault();
+
+  for (let i = 1; i <= amountValue; i++) {
+    if (i === 1) {
+      createPromise(i, delay + firstDelay)
+        .then(({ position, delay }) => {
+    console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+  })
+  .catch(({ position, delay }) => {
+    console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+  });
+    } else {
+      createPromise(i, delay)
+        .then(({ position, delay }) => {
+    console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+  })
+  .catch(({ position, delay }) => {
+    console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+  });
+    }
   }
+});
+
+
+function createPromise(position, delay) {
+
+  return new Promise((resolve, reject) => {
+    const shouldResolve = Math.random() > 0.3;
+    if (shouldResolve) {
+      resolve(position, delay);
+    } else {
+      reject(position, delay);
+    }
+  });
 }
+
+
+
+
