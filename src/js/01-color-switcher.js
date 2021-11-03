@@ -6,18 +6,20 @@ let startBtnIsActive = true;
 
 start.addEventListener('click', () => {
     if (startBtnIsActive) {
-
-  timeoutId = setInterval(() => {
-  const newColor = getRandomHexColor();
-  body.style.backgroundColor = newColor;
-  startBtnIsActive = false;
+       stop.classList.toggle('opacity');
+     timeoutId = setInterval(() => {
+     const newColor = getRandomHexColor();
+     body.style.backgroundColor = newColor;
+     startBtnIsActive = false;
 }, 1000);
    return;
 }
 });
 
 stop.addEventListener('click', () => {
-clearInterval(timeoutId)
+  stop.classList.toggle('opacity');
+  start.classList.toggle('opacity');
+  clearInterval(timeoutId);
 });
 
 function getRandomHexColor() {

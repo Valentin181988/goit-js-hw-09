@@ -46,3 +46,7 @@ img {
 .margin {
   margin-left: 4px;
 }
+
+.opacity {
+  opacity: 0.5;
+}
