@@ -1,15 +1,22 @@
-/* import flatpickr from 'flatpickr';
+import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-const refs = {
+/* const refs = {
   buttonStart: document.querySelector('[data-start]'),
   showDays: document.querySelector('[data-days]'),
   showHours: document.querySelector('[data-hours]'),
   showMinutes: document.querySelector('[data-minutes]'),
   showSeconds: document.querySelector('[data-seconds]')
-}
+} */
 
-class Timer {
+const buttonStart = document.querySelector('[data-start]');
+const showDays = document.querySelector('[data-days]');
+const showHours = document.querySelector('[data-hours]');
+const showMinutes = document.querySelector('[data-minutes]');
+const showSeconds = document.querySelector('[data-seconds]');
+
+/* class Timer {
   constructor()
 
   this.enableTime: true,
@@ -18,9 +25,13 @@ class Timer {
   this.minuteIncrement: 1,
   this.dateFormat: "Y-m-d H:i",
 } 
-
+ */
 const options = {
-  
+    enableTime: true,
+    time_24hr: true,
+    defaultDate: new Date(),
+    minuteIncrement: 1,
+    dateFormat: "Y-m-d H:i",
 
     onClose(selectedDates) {
      const nowDate = new Date();
@@ -29,7 +40,7 @@ const options = {
 
       if (deltaTime <= 0) {
         buttonStart.disabled = true;
-        alert("Please choose a date in the future");
+        Notify.warning("Please choose a date in the future");
       } else {
         buttonStart.disabled = false;
       };
@@ -78,5 +89,5 @@ function insrtHtml({ days, hours, minutes, seconds }) {
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
- */
+
 
