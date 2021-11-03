@@ -6,7 +6,7 @@ let startBtnIsActive = true;
 
 start.addEventListener('click', () => {
     if (startBtnIsActive) {
-       stop.classList.toggle('opacity');
+       stop.classList.toggle('js-opacity');
      timeoutId = setInterval(() => {
      const newColor = getRandomHexColor();
      body.style.backgroundColor = newColor;
@@ -17,8 +17,8 @@ start.addEventListener('click', () => {
 });
 
 stop.addEventListener('click', () => {
-  stop.classList.toggle('opacity');
-  start.classList.toggle('opacity');
+  stop.classList.toggle('js-opacity');
+  start.classList.toggle('js-opacity');
   clearInterval(timeoutId);
 });
 

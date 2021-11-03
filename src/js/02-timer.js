@@ -8,6 +8,8 @@ const showHours = document.querySelector('[data-hours]');
 const showMinutes = document.querySelector('[data-minutes]');
 const showSeconds = document.querySelector('[data-seconds]');
 
+buttonStart.disabled = true;
+
 const options = {
     enableTime: true,
     time_24hr: true,
@@ -25,6 +27,7 @@ const options = {
         Notify.warning("Please choose a date in the future");
       } else {
         buttonStart.disabled = false;
+        
       };
   }
     
@@ -34,7 +37,8 @@ const fp = flatpickr("#datetime-picker", options);
 
 buttonStart.addEventListener('click', () => {
     
-    startTimer(fp.selectedDates[0]); 
+  startTimer(fp.selectedDates[0]);
+    
 });
 
 let check = true;
