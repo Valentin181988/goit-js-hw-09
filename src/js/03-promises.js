@@ -11,23 +11,19 @@ form.addEventListener('submit', (evt) => {
   evt.preventDefault();
 
   for (let i = 1; i <= amountValue; i++) {
+    let promiseDelay = delay;
+
     if (i === 1) {
-      createPromise(i, delay + firstDelay)
-        .then(({ position, delay }) => {
-    console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
-  })
-  .catch(({ position, delay }) => {
-    console.log(`❌ Rejected promise ${position} in ${delay}ms`);
-  });
-    } else {
-      createPromise(i, delay)
-        .then(({ position, delay }) => {
-    console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
-  })
-  .catch(({ position, delay }) => {
-    console.log(`❌ Rejected promise ${position} in ${delay}ms`);
-  });
+      promiseDelay += firstDelay;
     }
+
+    createPromise(i, promiseDelay)
+      .then(({ position, delay }) => {
+        console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+      })
+      .catch(({ position, delay }) => {
+        console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+      });
   }
 });
 
