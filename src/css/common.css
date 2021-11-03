@@ -50,3 +50,32 @@ img {
 .opacity {
   opacity: 0.5;
 }
+
+.clockface {
+  display: block;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 80px;
+}
+
+.clockface-label {
+  display: block;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.field-margin {
+  text-align: center;
+  margin-left: 40px;
+}
+
+.timer {
+  display: flex;
+}
+
+.input {
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  font-size: 40px;
+  margin-left: 40px;
+}
