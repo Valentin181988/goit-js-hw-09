@@ -104,14 +104,14 @@ img {
   align-content: center;
 }
 
-.g {
+.input-box {
   text-align: center;
 }
 
-.g:not(:first-child) {
+.input-box:not(:first-child) {
   margin-left: 10px;
 }
 
-.s {
+.btn-margin {
   margin-top: 30px;
 }
