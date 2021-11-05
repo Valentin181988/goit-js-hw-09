@@ -17,11 +17,16 @@ img {
   max-width: 100%;
 }
 
+.form-box,
 .center {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   align-content: center;
+}
+
+.center {
+  justify-content: center;
   height: 100vh;
 }
 
@@ -51,16 +56,34 @@ img {
   opacity: 0.5;
 }
 
-.clockface {
+.input,
+.clockface,
+.clockface-label,
+.input-promise,
+.promise {
   font-family: 'Roboto', monospace;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+
+.clockface {
   font-size: 80px;
 }
 
 .clockface-label {
   display: block;
-  font-family: 'Roboto', monospace;
-  text-transform: uppercase;
   font-size: 30px;
+}
+
+.input-promise {
+  font-size: 20px;
+  width: 250px;
+  height: 50px;
+}
+
+.promise {
+  font-size: 20px;
+  padding: 0;
 }
 
 .field-margin {
@@ -72,36 +95,8 @@ img {
   display: flex;
 }
 
-.input {
-  font-family: 'Roboto', monospace;
-  text-transform: uppercase;
-  font-size: 40px;
-}
-
 .active {
   opacity: 0.5;
-}
-
-.input-promise {
-  font-family: 'Roboto', monospace;
-  text-transform: uppercase;
-  font-size: 20px;
-  width: 250px;
-  height: 50px;
-}
-
-.promise {
-  font-family: 'Roboto', monospace;
-  text-transform: uppercase;
-  font-size: 20px;
-  padding: 0;
-}
-
-.form-box {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
 }
 
 .input-box {
