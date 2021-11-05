@@ -99,10 +99,7 @@ function updateTimerFace({ days, hours, minutes, seconds }) {
   refs.showSeconds.textContent = `${seconds}`;
 }
 
-/* import flatpickr from 'flatpickr';
-import 'flatpickr/dist/flatpickr.min.css';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
-
+/* 
 const buttonStart = document.querySelector('[data-start]');
 const showDays = document.querySelector('[data-days]');
 const showHours = document.querySelector('[data-hours]');
