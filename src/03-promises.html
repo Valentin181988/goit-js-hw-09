@@ -9,21 +9,31 @@
   <body>
     <p><a href="index.html">Go back</a></p>
 
-    <form class="form">
-      <label>
-        First delay (ms)
-        <input type="number" name="delay" required />
-      </label>
-      <label>
-        Delay step (ms)
-        <input type="number" name="step" required />
-      </label>
-      <label>
-        Amount
-        <input type="number" name="amount" required />
-      </label>
-      <button type="submit">Create promises</button>
-    </form>
+  <form class="form">
+    <div class="form-box">
+      <div class="field-margin">
+         <label class="promise">
+              First delay (ms)
+            <input class="input-promise" type="number" name="delay" required />
+        </label>
+      </div>
+      <div class="field-margin">
+          <label class="promise">
+              Delay step (ms)
+            <input class="input-promise" type="number" name="step" required />
+          </label>
+      </div>
+      <div class="field-margin">
+          <label class="promise">
+              Amount
+            <input class="input-promise" type="number" name="amount" required />
+          </label>
+      </div>
+      <div class="field-margin">
+          <button class="input-promise promise" type="submit">Create promises</button>
+      </div>
+    </div>
+  </form>
 
     <script src="js/03-promises.js"></script>
   </body>
