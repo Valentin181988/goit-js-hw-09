@@ -86,8 +86,12 @@ img {
   padding: 0;
 }
 
+.input-box,
 .field-margin {
   text-align: center;
+}
+
+.field-margin {
   margin-left: 40px;
 }
 
@@ -97,10 +101,6 @@ img {
 
 .active {
   opacity: 0.5;
-}
-
-.input-box {
-  text-align: center;
 }
 
 .input-box:not(:first-child) {
