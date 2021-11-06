@@ -30,8 +30,9 @@ form.addEventListener('submit', (evt) => {
 });
 
 function createPromise(position, delay) {
+
   return new Promise((resolve, reject) => {
-    const args = {position: position, delay: delay}
+    const args = { position: position, delay: delay };
     const shouldResolve = Math.random() > 0.3;
     
     if (shouldResolve) {
