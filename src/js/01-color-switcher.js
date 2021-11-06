@@ -2,23 +2,30 @@ const start = document.querySelector('button[data-start]');
 const stop = document.querySelector('button[data-stop]');
 const body = document.querySelector('body');
 let timeoutId = null;
-let startBtnIsActive = true;
+
+stop.disabled = true;
+stop.classList.add('js-opacity');
 
 start.addEventListener('click', () => {
-    if (startBtnIsActive) {
-       stop.classList.toggle('js-opacity');
-     timeoutId = setInterval(() => {
+  start.disabled = true;
+  start.classList.toggle('js-opacity');
+
+  stop.disabled = false;
+  stop.classList.toggle('js-opacity');
+
+  timeoutId = setInterval(() => {
      const newColor = getRandomHexColor();
      body.style.backgroundColor = newColor;
-     startBtnIsActive = false;
-}, 1000);
-   return;
-}
+  }, 1000);
 });
 
 stop.addEventListener('click', () => {
-  stop.classList.toggle('js-opacity');
+  start.disabled = false;
   start.classList.toggle('js-opacity');
+
+  stop.disabled = true;
+  stop.classList.toggle('js-opacity');
+  
   clearInterval(timeoutId);
 });
 
