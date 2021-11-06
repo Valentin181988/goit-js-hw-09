@@ -6,19 +6,19 @@ const amountInput = document.querySelector('[name="amount"]');
 const form = document.querySelector(".form");
 
 form.addEventListener('submit', (evt) => {
-  const amountValue = amountInput.value;
-  const firstDelay = delayInput.value;
-  const delay = stepInput.value;
-
   evt.preventDefault();
+  
+  const amountValue = parseInt(amountInput.value);
+  const firstDelay =  parseInt(delayInput.value);
+  const delay = parseInt(stepInput.value);
+  let promiseDelay = delay + firstDelay;
 
   for (let i = 1; i <= amountValue; i++) {
-    let promiseDelay = delay;
 
-    if (i === 1) {
-      promiseDelay += firstDelay;
+    if (i !== 1) {
+      promiseDelay += delay;
     }
-
+    
     createPromise(i, promiseDelay)
       .then(({ position, delay }) => {
         Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
@@ -29,15 +29,19 @@ form.addEventListener('submit', (evt) => {
   }
 });
 
-
 function createPromise(position, delay) {
-
   return new Promise((resolve, reject) => {
+    const args = {position: position, delay: delay}
     const shouldResolve = Math.random() > 0.3;
+    
     if (shouldResolve) {
-      resolve(position, delay);
+      setTimeout(() => {
+        resolve(args);
+      }, delay);
     } else {
-      reject(position, delay);
+       setTimeout(() => {
+        reject(args);
+      }, delay);
     }
   });
 }
